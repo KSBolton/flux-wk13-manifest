@@ -52,6 +52,7 @@ jobs:
         -e DBPWD=$DB_PWD --net assign1 --name webapp $ECR_REGISTRY/$ECR_APP_REPO:$APPIMAGE_TAG
         docker ps
         sleep 10
+        docker ps
         curl localhost -vvv
         docker push $ECR_REGISTRY/$ECR_APP_REPO:$APPIMAGE_TAG
         docker push $ECR_REGISTRY/$ECR_DB_REPO:$DBIMAGE_TAG
