@@ -4,6 +4,6 @@ metadata:
   name: webappinfo
   namespace: {{ .Values.namespace }}
 data:
-  bgimage: "s3://clo835bgimg/bg2.jpeg"
+  bgimage: "s3://clo835bgimg/photo-6.jpg"
   ournames: "Islamiyat Osuolale, Kamaal Bolton, Naveendran Wijeyasekaran, Oluwole Amusan, Superman, Thor, Ryan Reynolds, Miles Morales"
   dbuser: "dbadmin"
