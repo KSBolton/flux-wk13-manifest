@@ -15,7 +15,6 @@ except (AttributeError) as e:
 
 try:
     if len(split_str) > 0:
-        s3.download_file(Bucket=split_str[2],
-                        Key=split_str[-1], Filename="/app/static/img/bgimg.jpg")
+        s3.download_file(split_str[2], split_str[-1], '/app/static/img/bgimg.jpg')
 except (NoCredentialsError) as e:
     print(e)                    
