@@ -4,14 +4,14 @@ metadata:
   name: "{{ .Values.deployname }}-np"
   namespace: {{ .Values.namespace }}
   labels:
-    app: employees
+    {{- include "colors-app.selectorLabels" . | nindent 4 }}
 spec:
   type: {{ .Values.appservice.type }}
   selector:
-    app: employees
+    {{- include "colors-app.selectorLabels" . | nindent 4 }}
   ports:
   - name: ext30000
-    port: 30000
-    targetPort: 81
+    port: {{ .Values.appservice.port }}
+    targetPort: {{ .Values.appservice.targetPort }}
     protocol: TCP
     nodePort: {{ .Values.appservice.nodePort }}

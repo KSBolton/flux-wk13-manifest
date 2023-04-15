@@ -54,4 +54,4 @@ spec:
               name: webappinfo
               key: ournames
       imagePullSecrets:
-      - name: ecr-cred          
+      - name: ecr-cred   
