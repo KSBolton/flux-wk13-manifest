@@ -14,4 +14,4 @@ spec:
     port: {{ .Values.appservice.port }}
     targetPort: {{ .Values.appservice.targetPort }}
     protocol: TCP
-    # nodePort: {{ .Values.appservice.nodePort }}
+    nodePort: {{ .Values.appservice.nodePort }}
