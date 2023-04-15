@@ -5,9 +5,9 @@ metadata:
   namespace: final
 spec:
   interval: 1m
-  url: https://github.com/KSBolton/k8s-devops-appdeploy-eks
+  url: https://github.com/KSBolton/flux-wk13-manifest
   ref:
-    branch: flux-trial-eks
+    branch: main
   ignore: |
     # exclude all
     /*
