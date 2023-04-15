@@ -9,5 +9,5 @@ RUN set -xe \
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 EXPOSE 81
-ENTRYPOINT [ "sh", "-c", "python3 getbg.py && sleep 2 && python3" ]
-CMD [ "app.py" ]
+ENTRYPOINT ["sh", "-c", "python3 getbg.py && sleep 2 && python3 app.py"]
+# CMD [ "app.py" ]
