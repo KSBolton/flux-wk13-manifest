@@ -39,8 +39,8 @@ jobs:
       run: |
         cd appcode/
         #Build Docker image
-        docker build -t $ECR_REGISTRY/$ECR_APP_REPO:$IMAGE_TAG -f Dockerfile .
-        docker build -t $ECR_REGISTRY/$ECR_DB_REPO:$IMAGE_TAG -f Dockerfile_mysql .
+        docker build -t $ECR_REGISTRY/$ECR_APP_REPO:$APPIMAGE_TAG -f Dockerfile .
+        docker build -t $ECR_REGISTRY/$ECR_DB_REPO:$DBIMAGE_TAG -f Dockerfile_mysql .
         # Make custom bridge network
         docker network create -d bridge assign1
         # Unit test
@@ -53,5 +53,5 @@ jobs:
         docker ps
         sleep 5
         curl localhost -vvv
-        docker push $ECR_REGISTRY/$ECR_APP_REPO:$IMAGE_TAG
-        docker push $ECR_REGISTRY/$ECR_DB_REPO:$IMAGE_TAG
+        docker push $ECR_REGISTRY/$ECR_APP_REPO:$APPIMAGE_TAG
+        docker push $ECR_REGISTRY/$ECR_DB_REPO:$DBIMAGE_TAG
