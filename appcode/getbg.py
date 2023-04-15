@@ -2,7 +2,7 @@ import os
 import boto3
 from botocore.exceptions import NoCredentialsError
 
-BGIMAGE = os.environ.get("BGIMAGE") 
+BGIMAGE = open("/etc/webappinfo/bgimage")
 
 s3 = boto3.client("s3")
 

@@ -43,15 +43,13 @@ spec:
             secretKeyRef:
               name: dbpwd
               key: dbpwd
-        - name: BGIMAGE
-          valueFrom:
-            configMapKeyRef:
+        volumeMounts:
+          - name: cvol
+            mountPath: "/etc/webappinfo"
+            readOnly: true
+        volumes:
+          - name: cmap
+            configMap:
               name: webappinfo
-              key: bgimage
-        - name: OURNAMES
-          valueFrom:
-            configMapKeyRef:
-              name: webappinfo
-              key: ournames
       imagePullSecrets:
       - name: ecr-cred   
