@@ -47,9 +47,9 @@ spec:
           - name: cvol
             mountPath: "/etc/webappinfo"
             readOnly: true
-        volumes:
-          - name: cvol
-            configMap:
-              name: webappinfo
+      volumes:
+        - name: cvol
+          configMap:
+            name: webappinfo
       imagePullSecrets:
       - name: ecr-cred   
