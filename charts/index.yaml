@@ -1,0 +1,36 @@
+apiVersion: v1
+entries:
+  colors-app:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-04-10T10:29:52.361883081Z"
+    description: A Helm chart for Kubernetes
+    digest: bfc5bfa376f980180435016259a4d7e105524f40c7e97f8b1f48eaf40fae5ecd
+    name: colors-app
+    type: application
+    urls:
+    - colors-app-0.1.0.tgz
+    version: 0.1.0
+  colors-db:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-04-10T10:29:52.362257198Z"
+    description: A Helm chart for Kubernetes
+    digest: 6d0a703c4893e70434f7fe20b6b0aae90cf362d5226cbe400b67658e3701922d
+    name: colors-db
+    type: application
+    urls:
+    - colors-db-0.1.0.tgz
+    version: 0.1.0
+  helm-test-chart:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-04-10T10:29:52.362646622Z"
+    description: A Helm chart for Kubernetes
+    digest: 78a55299c2255ca24895d409aeda013c4d798042207afeca611e92adb7ab7c42
+    name: helm-test-chart
+    type: application
+    urls:
+    - helm-test-chart-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-04-10T10:29:52.361224032Z"

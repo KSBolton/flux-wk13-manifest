@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: "mysql-app-dep-lb"
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "colors-app.selectorLabels" . | nindent 4 }}
+spec:
+  selector:
+    {{- include "colors-app.selectorLabels" . | nindent 4 }}
+  ports:
+    - protocol: TCP
+      port: 81
+      targetPort: 81
+  type: LoadBalancer
