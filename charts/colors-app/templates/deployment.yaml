@@ -48,7 +48,7 @@ spec:
             mountPath: "/etc/webappinfo"
             readOnly: true
         volumes:
-          - name: cmap
+          - name: cvol
             configMap:
               name: webappinfo
       imagePullSecrets:
