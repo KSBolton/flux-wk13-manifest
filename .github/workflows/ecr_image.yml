@@ -58,6 +58,7 @@ jobs:
         sleep 10
         docker ps
         docker logs webapp
+        env | grep AWS
         curl localhost -vvv
         docker push $ECR_REGISTRY/$ECR_APP_REPO:$APPIMAGE_TAG
         docker push $ECR_REGISTRY/$ECR_DB_REPO:$DBIMAGE_TAG
