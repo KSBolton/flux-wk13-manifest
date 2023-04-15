@@ -8,12 +8,14 @@ s3 = boto3.client("s3")
 split_str = ""
 
 try:
-    split_str = BGIMAGE.split('/')
+    if '/' in BGIMAGE:
+        split_str = BGIMAGE.split('/')
 except (AttributeError) as e:
     print(e)
 
 try:
-    s3.download_file(Bucket=split_str[2],
-                    Key=split_str[-1], Filename="/app/static/img/bgimg.jpg")
+    if len(split_str) > 0:
+        s3.download_file(Bucket=split_str[2],
+                        Key=split_str[-1], Filename="/app/static/img/bgimg.jpg")
 except (NoCredentialsError) as e:
     print(e)                    

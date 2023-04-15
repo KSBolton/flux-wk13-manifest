@@ -13,9 +13,9 @@ DBPWD = os.environ.get("DBPWD") or "passwors"
 DATABASE = os.environ.get("DATABASE") or "employees"
 COLOR_FROM_ENV = os.environ.get('APP_COLOR') or "lime"
 DBPORT = int(os.environ.get("DBPORT"))
-BGIMAGE = open("/etc/webappinfo/bgimage")
+BGIMAGE = os.environ.get("BGIMAGE")
 BGIMAGE_PATH = "img/bgimg.jpg" or "https://img.freepik.com/free-vector/404-error-with-landscape-concept-illustration_114360-7898.jpg?w=996&t=st=1681209605~exp=1681210205~hmac=b8dffedf2197e4a960b8dd881b4041372c57ad8a34cd682164cf36b8ec3a3c8f"
-OURNAMES = BGIMAGE = open("/etc/webappinfo/ournames")
+OURNAMES = os.environ.get("OURNAMES")
 
 # Create a connection to the MySQL database
 db_conn = connections.Connection(
