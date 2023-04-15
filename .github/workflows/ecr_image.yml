@@ -2,7 +2,7 @@ name: Build & Push to ECR
 
 on: 
   push:
-    branches: [ flux-trial-eks ]
+    branches: [ main ]
     paths: appcode/**
     
   workflow_dispatch:
@@ -34,9 +34,10 @@ jobs:
         ECR_APP_REPO: clo835-a1-webapp
         ECR_DB_REPO: clo835-a1-mysqldb
         DB_PWD: ${{ secrets.DBPWD }}
-        DBIMAGE_TAG: latest
-        APPIMAGE_TAG: v3.0
+        DBIMAGE_TAG: v0.1
+        APPIMAGE_TAG: v0.1
       run: |
+        cd appcode/
         #Build Docker image
         docker build -t $ECR_REGISTRY/$ECR_APP_REPO:$IMAGE_TAG -f Dockerfile .
         docker build -t $ECR_REGISTRY/$ECR_DB_REPO:$IMAGE_TAG -f Dockerfile_mysql .
@@ -47,7 +48,7 @@ jobs:
         $ECR_REGISTRY/$ECR_DB_REPO:$DBIMAGE_TAG
         # Wait for sql container to listen on port
         sleep 15
-        docker run -itd -p 80:8080 -e DBHOST="mysql-db" -e DBPORT="3306" -e APP_COLOR="blue" \
+        docker run -itd -p 80:81 -e DBHOST="mysql-db" -e DBPORT="3306" -e APP_COLOR="blue" \
         -e DBPWD=$DB_PWD --net assign1 --name webapp $ECR_REGISTRY/$ECR_APP_REPO:$APPIMAGE_TAG
         docker ps
         sleep 5
