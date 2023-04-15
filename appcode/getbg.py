@@ -15,5 +15,5 @@ except (AttributeError) as e:
 try:
     s3.download_file(Bucket=split_str[2],
                     Key=split_str[-1], Filename="/app/static/img/bgimg.jpg")
-except as e:
+except (NoCredentialsError) as e:
     print(e)                    
