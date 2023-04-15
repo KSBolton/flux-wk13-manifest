@@ -5,11 +5,11 @@
 
 dbrepo: 
   name: 954333580089.dkr.ecr.us-east-1.amazonaws.com/clo835-a1-mysqldb
-  tag: latest
+  tag: v0.1
 
 apprepo:
   name: 954333580089.dkr.ecr.us-east-1.amazonaws.com/clo835-a1-webapp
-  tag: v3.0
+  tag: v0.1
 
 namespace: final
 deployname: mysql-app-dep
